@@ -1,7 +1,4 @@
 //custom product sorting
-
-
-
 package Collections;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -9,14 +6,31 @@ import java.util.Map;
 public class companyp1 {
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
+		String[] ar=takeinput(scan);
+//		System.out.println("Enter the operation you want to perform");
+//		System.out.println("1.Return the total price and number of products purchased by a customer ");
+//		int input=scan.nextInt();
+//		if(input==1) {
+		HashMap<Integer,Customer> map=buildCustomerMap(ar);
+//		}
+	}
+	
+	public static String[] takeinput(Scanner scan){
+		System.out.println("Enter the number of customers:");
 		int noOfcustomers=scan.nextInt();
 		scan.nextLine();
 		String[] ar=new String[noOfcustomers];
 		for(int i=0;i<noOfcustomers;i++) {
+			System.out.println("Enter the customer detail for"+(i+1));
 			ar[i]=scan.nextLine();
 		}
+		return ar;
 		
-		
+	}
+
+	
+	
+	public static HashMap<Integer,Customer> buildCustomerMap(String [] ar) {
 		HashMap<Integer, Customer> map = new HashMap<>();
 		for(int i = 0; i < ar.length; i++) {
 
@@ -40,16 +54,16 @@ public class companyp1 {
 		    	c.setProdcount(1); 
 		    	map.put(id, c);
 		    }
-
 		}
 		
-		for(Map.Entry<Integer,Customer> customer:map.entrySet()) {
+		for(Map.Entry<Integer, Customer> customer:map.entrySet()) {
 			System.out.println(customer.getKey()+","+customer.getValue());
 		}
-		
-		
-
+		return map;
 	}
+	
+	
+	
 	public static class Customer{
 		int id;
 		String name;
@@ -106,10 +120,7 @@ public class companyp1 {
 		public String toString() {
 			return "" + name + "," + total_price + "," + prodcount ;
 		}
-		
-		
-		
-		
+
 	}
 }
 
