@@ -17,18 +17,36 @@ public class companyp1 {
 		}
 		
 		
+		HashMap<Integer, Customer> map = new HashMap<>();
 		for(int i = 0; i < ar.length; i++) {
 
 		    String[] data = ar[i].split(",");
 
 		    int id = Integer.parseInt(data[0]);
 		    String name = data[1];
-		    String product = data[2];
 		    int price = Integer.parseInt(data[3]);
+		    
+		    if(map.containsKey(id)) {
+		    	Customer c=map.get(id); //accessing the object created in else block
+		    	c.setProdcount(c.getProdcount()+1);
+		    	c.setTotal_price(c.getTotal_price()+price);
+		    }
+		    
+		    else {
+		    	Customer c=new Customer();
+		    	c.setId(id);
+		    	c.setName(name);
+		    	c.setTotal_price(price);
+		    	c.setProdcount(1); 
+		    	map.put(id, c);
+		    }
 
 		}
 		
-		HashMap<Integer, Customer> map = new HashMap<>();
+		for(Map.Entry<Integer,Customer> customer:map.entrySet()) {
+			System.out.println(customer.getKey()+","+customer.getValue());
+		}
+		
 		
 
 	}
@@ -83,6 +101,12 @@ public class companyp1 {
 			this.total_price = total_price;
 			this.prodcount = prodcount;
 		}
+
+		@Override
+		public String toString() {
+			return "" + name + "," + total_price + "," + prodcount ;
+		}
+		
 		
 		
 		
