@@ -50,7 +50,7 @@ public class companyp1 {
 		}
 		
 		else {
-			System.out.println("Enter the valid input");
+			System.out.println("!!!!....No options for this input....!!!!");
 		}
 
 	}
@@ -61,7 +61,7 @@ public class companyp1 {
 		scan.nextLine();
 		String[] ar=new String[noOfcustomers];
 		for(int i=0;i<noOfcustomers;i++) {
-			System.out.println("Enter the customer detail for"+(i+1));
+			System.out.println("Enter the customer detail for "+(i+1));
 			ar[i]=scan.nextLine();
 		}
 		return ar;
