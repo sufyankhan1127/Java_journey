@@ -5,7 +5,7 @@
 103,Bob,Math,170
 102,Alex,Math,95
 101,John,Science,75
-103,Bob,English,80
+103,Bob,English,120
 102,Alex,English,90
 */
 
@@ -29,6 +29,7 @@ public class companyp2 {
 		System.out.println("3.Sort the students based on marks in ascending order");
 		System.out.println("4.Sort the students based on totalsubjects in ascending order");
 		System.out.println("5.Sort the students based on totalsubjects in ascending order");
+		System.out.println("6.Student who scored highest in class");
 		int input=scan.nextInt();
 		HashMap<Integer,Student> map=buildStudentMap(ar);
 		if(input==1) {
@@ -44,6 +45,10 @@ public class companyp2 {
 				System.out.println(s.getId()+","+s);
 			}
 			
+		}
+		else if(input==6) {
+			System.out.println("The Highest Scorer in the class is: ");
+			System.out.println(highestScorer(map));
 		}
 		
 		else {
@@ -64,6 +69,7 @@ public class companyp2 {
 		
 		return ar;
 	}
+	
 	
 	public static HashMap<Integer,Student> buildStudentMap(String[] ar){
 		HashMap<Integer,Student> map=new HashMap<>();
@@ -153,6 +159,21 @@ public class companyp2 {
 		
 	}
 	
+	public static Student highestScorer(HashMap<Integer, Student> map) {
+
+	    Student highest = null;
+
+	    for (Map.Entry<Integer, Student> entry : map.entrySet()) {
+
+	        Student current = entry.getValue();
+
+	        if (highest == null || current.getTotalmarks() > highest.getTotalmarks()) {
+	            highest = current;
+	        }
+	    }
+
+	    return highest;
+	}
 	
 	public static class Student {
 		private int id;
