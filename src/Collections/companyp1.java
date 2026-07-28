@@ -42,20 +42,17 @@ public class companyp1 {
 			}
 		}
 		
-		else if(input==2 || input==3) {
-			ArrayList<Customer> list=sortbyproducts(map, input);
+		else if(input==2 || input==3 || input==4 || input==5) {
+			ArrayList<Customer> list=sorting(map, input);
 			for(Customer c : list) {
 			    System.out.println(c.getId() + "," + c);
 			}
 		}
 		
-		else if(input==4 || input==5) {
-			ArrayList<Customer> list=sortbasedOnTotalprice(map, input);
-			
-			for(Customer c:list) {
-				System.out.println(c.getId()+","+c);
-			}
+		else {
+			System.out.println("Enter the valid input");
 		}
+
 	}
 	
 	public static String[] takeinput(Scanner scan){
@@ -70,51 +67,7 @@ public class companyp1 {
 		return ar;
 		
 	}
-	
-	public static ArrayList<Customer> sortbyproducts(HashMap<Integer,Customer> map,int input) {
-		ArrayList<Customer> list = new ArrayList<>();
 
-		for(Map.Entry<Integer, Customer> customer : map.entrySet()) {
-			list.add(customer.getValue());
-		}
-		
-		
-		if(input==2) {
-			Collections.sort(list, new Comparator<Customer>() {
-
-				@Override
-				public int compare(Customer o1, Customer o2) {
-					
-					if(o1.getProdcount()==o2.getProdcount()) {
-						return Integer.compare(o2.getTotal_price(), o1.getTotal_price() );
-					}
-					
-					return Integer.compare(o2.getProdcount(), o1.getProdcount());
-				}
-
-			});
-		}
-		
-		else if(input==3) {
-			Collections.sort(list, new Comparator<Customer>() {
-
-				@Override
-				public int compare(Customer o1, Customer o2) {
-					if(o1.getProdcount()==o2.getProdcount()) {
-						return Integer.compare(o1.getTotal_price(), o2.getTotal_price() );
-					}
-					
-					return Integer.compare(o1.getProdcount(), o2.getProdcount());
-				}
-
-			});
-		}
-		return list;
-
-	}
-
-	
-	
 	public static HashMap<Integer,Customer> buildCustomerMap(String [] ar) {
 		HashMap<Integer, Customer> map = new HashMap<>();
 		for(int i = 0; i < ar.length; i++) {
@@ -146,13 +99,44 @@ public class companyp1 {
 	}
 	
 	
-	public static ArrayList<Customer> sortbasedOnTotalprice(HashMap<Integer,Customer> map,int input){
+	public static ArrayList<Customer> sorting(HashMap<Integer,Customer> map,int input){
 		ArrayList<Customer> list=new ArrayList<>();
 		for(Map.Entry<Integer,Customer> customer:map.entrySet()) {
 			list.add(customer.getValue());
 		}
 		
-		if(input==4) {
+		if(input==2) {
+			Collections.sort(list, new Comparator<Customer>() {
+
+				@Override
+				public int compare(Customer o1, Customer o2) {
+					
+					if(o1.getProdcount()==o2.getProdcount()) {
+						return Integer.compare(o2.getTotal_price(), o1.getTotal_price() );
+					}
+					
+					return Integer.compare(o2.getProdcount(), o1.getProdcount());
+				}
+
+			});
+		}
+		else if(input==3) {
+			Collections.sort(list, new Comparator<Customer>() {
+
+				@Override
+				public int compare(Customer o1, Customer o2) {
+					if(o1.getProdcount()==o2.getProdcount()) {
+						return Integer.compare(o1.getTotal_price(), o2.getTotal_price() );
+					}
+					
+					return Integer.compare(o1.getProdcount(), o2.getProdcount());
+				}
+
+			});
+		}
+		
+		
+		else if(input==4) {
 			Collections.sort(list,new Comparator<Customer>() {
 				
 				public int compare(Customer o1,Customer o2) {
@@ -185,10 +169,10 @@ public class companyp1 {
 	
 	
 	public static class Customer{
-		int id;
-		String name;
-		int total_price;
-		int prodcount;
+		private int id;
+		private String name;
+		private int total_price;
+		private int prodcount;
 		
 		public Customer() {
 			// TODO Auto-generated constructor stub
