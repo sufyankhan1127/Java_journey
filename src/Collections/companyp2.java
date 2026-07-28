@@ -2,7 +2,7 @@
 /*101,John,Math,90
 102,Alex,Science,80
 101,John,English,85
-103,Bob,Math,70
+103,Bob,Math,170
 102,Alex,Math,95
 101,John,Science,75
 103,Bob,English,80
@@ -11,7 +11,7 @@
 
 package Collections;
 
-import java.io.ObjectInputStream.GetField;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -27,6 +27,8 @@ public class companyp2 {
 		System.out.println("1.Calculate total subject + total marks of each student");
 		System.out.println("2.Sort the students based on marks in descending order");
 		System.out.println("3.Sort the students based on marks in ascending order");
+		System.out.println("4.Sort the students based on totalsubjects in ascending order");
+		System.out.println("5.Sort the students based on totalsubjects in ascending order");
 		int input=scan.nextInt();
 		HashMap<Integer,Student> map=buildStudentMap(ar);
 		if(input==1) {
@@ -36,12 +38,16 @@ public class companyp2 {
 			}
 
 		}
-		else if(input==2 || input==3) {
+		else if(input==2 || input==3 ||input==4 || input==5) {
 			ArrayList<Student> list=sortstudents(map,input);
 			for(Student s:list) {
 				System.out.println(s.getId()+","+s);
 			}
 			
+		}
+		
+		else {
+			System.out.println("!!!..No operation for this input...!!!");
 		}
 		
 	}
@@ -106,7 +112,7 @@ public class companyp2 {
 				}
 			});
 		}
-		if(input==3) {
+		else if(input==3) {
 			Collections.sort(list,new Comparator<Student>() {
 				
 				public int compare(Student s1,Student s2) {
@@ -118,7 +124,31 @@ public class companyp2 {
 				}
 			});
 		}
+		else if(input==4) {
+			Collections.sort(list,new Comparator<Student>() {
+				
+				public int compare(Student s1,Student s2) {
+					
+					if(s1.getTotalsubs()==s2.getTotalsubs()) {
+						return Integer.compare(s2.getTotalmarks(), s1.getTotalmarks());
+					}
+					return Integer.compare(s2.getTotalsubs(), s1.getTotalsubs());
+				}
+			});
+		}
 		
+		else if(input==5) {
+			Collections.sort(list,new Comparator<Student>() {
+				
+				public int compare(Student s1,Student s2) {
+					
+					if(s1.getTotalsubs()==s2.getTotalsubs()) {
+						return Integer.compare(s1.getTotalmarks(), s2.getTotalmarks());
+					}
+					return Integer.compare(s1.getTotalsubs(), s2.getTotalsubs());
+				}
+			});
+		}
 		return list;
 		
 	}
