@@ -1,3 +1,7 @@
+//Student sorting based on marks and subjects
+
+
+
 /*8
 /*101,John,Math,90
 102,Alex,Science,80
@@ -29,7 +33,7 @@ public class companyp2 {
 		System.out.println("3.Sort the students based on marks in ascending order");
 		System.out.println("4.Sort the students based on totalsubjects in ascending order");
 		System.out.println("5.Sort the students based on totalsubjects in ascending order");
-		System.out.println("6.Student who scored highest in class");
+		System.out.println("6.Student who scored highest in class??");
 		int input=scan.nextInt();
 		HashMap<Integer,Student> map=buildStudentMap(ar);
 		if(input==1) {
