@@ -1,12 +1,12 @@
 /*You are the smartest person in the village: There is kite flying competition organized by a certain person,
- where each kite has id name of person flying kite
+ where each kite has id,name of person flying kite and distance of kite flew
  you first have to get all the kites but 
-  he/she tells you to first give the data less than a certain number of distance
+  he/she tells you to first give the data less than a certain number of distance(Eligible distance)
   and then he will say you to get the third lowest flied kite or second or first
   or third,first,second highest
   
   *
-  *input:8
+ *input:8
 101,Raju,1500
 103,ramesh,900
 105,Akash,1700
@@ -50,6 +50,10 @@ public class companyp4 {
 		else if( option==1 || option==2 || option==3 || option==11 || option==22 || option==33) {
 			Kite k=returnRequired(map, option);
 			System.out.println(k);
+		}
+		else {
+			System.out.println("!!!...Enter the valid option...!!!");
+			scan.close();
 		}
 		
 		
