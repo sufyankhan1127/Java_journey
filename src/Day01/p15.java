@@ -18,7 +18,7 @@ public class p15 {
 			s=digit+s;
 			n=n/10;
 		}
-		System.out.print(s.length());
+		System.out.print(s);
 	}
 
 }
