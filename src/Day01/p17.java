@@ -1,50 +1,42 @@
 package Day01;
 
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class p17 {
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int N=scan.nextInt();
+		int M=scan.nextInt();
+		int[] obligation=new int[M];
+		for(int i=0;i<M;i++) {
+			obligation[i]=scan.nextInt();
+		}
+		int maxgap=0;
 
-    public static void main(String[] args) {
-
-        Scanner scan = new Scanner(System.in);
-
-        // Total number of days
-        int N = scan.nextInt();
-
-        // Number of obligation days
-        int M = scan.nextInt();
-
-        // Store obligation days
-        int[] obligation = new int[M];
-
-        for (int i = 0; i < M; i++) {
-            obligation[i] = scan.nextInt();
+        if (M == 0) {
+            System.out.println(N);
+            return;
         }
 
-        int maxGap = 0;
+        Arrays.sort(obligation);
+        maxgap=obligation[0]-1; // days before first obligation
+        for(int i=0;i<M-1;i++){
+            int gap=obligation[i+1]-obligation[i]-1;
 
-        // 1. Days before the first obligation
-        maxGap = obligation[0] - 1;
-
-        // 2. Days between consecutive obligations
-        for (int i = 0; i < M - 1; i++) {
-
-            int gap = obligation[i + 1] - obligation[i] - 1;
-
-            if (gap > maxGap) {
-                maxGap = gap;
+            if(gap>maxgap){
+                maxgap=gap;
             }
         }
-
-        // 3. Days after the last obligation
-        int lastGap = N - obligation[M - 1];
-
-        if (lastGap > maxGap) {
-            maxGap = lastGap;
+        int lastgap=N-obligation[M-1];
+        if(lastgap>maxgap){
+            maxgap=lastgap;
         }
+        
 
-        System.out.println(maxGap);
+        System.out.println(maxgap);
+	}
 
-        scan.close();
-    }
+	        
+
 }
