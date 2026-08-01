@@ -14,12 +14,39 @@ public class p11 {
 		second.next=third;
 		third.next=fourth;
 		
+		//Delete at first
+		/*
 		head=head.next;
 		
 		while(head!=null) {
 			System.out.println(head.data);
 			head=head.next;
 		}
+		*/
+		
+		
+		
+		//Delete at last
+		if (head == null || head.next == null) {
+		    head = null;
+		}
+		
+		else{
+			Node3 temp=head;
+			
+			while(temp.next.next!=null) {
+				temp=temp.next;
+			}
+			
+			temp.next=null;
+			
+			temp=head;
+			while(temp!=null) {
+				System.out.println(temp.data);
+				temp=temp.next;
+			}
+		}
+		
 	}
 
 }
