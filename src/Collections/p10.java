@@ -18,6 +18,7 @@ public class p10 {
 		
 		int n=scan.nextInt();
 		int m=scan.nextInt();
+
 		Node2 begin=new Node2(n);
 		Node2 end=new Node2(m);
 		
@@ -25,12 +26,18 @@ public class p10 {
 		
 		Node2 temp=begin;
 		while(temp.next!=null) {
-			System.out.println(temp.data);
+//			System.out.println(temp.data);
 			temp=temp.next;
 		}
 		
 		temp.next=end;
-		System.out.println(end.data);
+		
+		temp=begin;
+		while(temp!=null) {
+			System.out.println(temp.data);
+			temp=temp.next;
+		}
+//		System.out.println(end.data);
 	}
 
 }
