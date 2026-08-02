@@ -12,7 +12,7 @@ public class p10 {
 	public static void countRepeatedChar(String s) {
 		int count=0;
 		for(int i=0;i<s.length();i++) {
-			boolean a=false;
+//			boolean a=false;
 			for(int j=0;j<i;j++) {
 				if(s.charAt(i)==s.charAt(j)) {
 					count++;

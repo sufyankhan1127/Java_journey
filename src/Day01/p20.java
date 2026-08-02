@@ -7,11 +7,11 @@ public class p20 {
 		Scanner scan=new Scanner(System.in);
 		int x=scan.nextInt();
 		int y=scan.nextInt();
-		printNumbersbetween(x, y);
+		printArmstrongbetween(x, y);
 		
 	}
 	
-	static void printNumbersbetween(int x,int y) {
+	static void printArmstrongbetween(int x,int y) {
 		
 		for(int i=x+1;i<=y;i++) {
 			int original=i;
@@ -28,10 +28,11 @@ public class p20 {
 			
 			while(temp>0) {
 				int digit=temp%10;
-				int power=1;
-				for(int j=0;j<count;j++) {
+//				int power=1;
+				/*for(int j=0;j<count;j++) {
 					power=power*digit;
-				}
+				}*/
+				int power=(int) Math.pow(digit, count);
 				
 				sum=sum+power;
 				temp=temp/10;
