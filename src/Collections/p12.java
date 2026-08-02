@@ -31,6 +31,16 @@ public class p12 {
 
         Node4 temp = head;
         int count = 1;
+        /*for (int i = 1; i < position - 1; i++) {
+            temp = temp.next;
+        }
+
+        insertion.next = temp.next;
+        temp.next = insertion;
+
+        temp = head;
+        */
+
 		
 		 while (temp != null) {
 
