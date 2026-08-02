@@ -28,10 +28,12 @@ public class p21 {
 		int sum=0;
 		while(temp!=0) {
 			int digit=temp%10;
-			int power=1;
-			for(int i=0;i<count;i++) {
+//			int power=1;
+			/*for(int i=0;i<count;i++) {
 				power=power*digit;
-			}
+			}*/
+			
+			int power=(int) Math.pow(digit, count);
 			sum=sum+power;
 			
 			temp=temp/10;
