@@ -13,12 +13,15 @@ public class p15 {
 	
 	public static void countLength(int n) {
 		String s="";
+		int count=0;
 		while(n>0) {
+			count++;
 			int digit=(int)(n%10);
 			s=digit+s;
 			n=n/10;
 		}
-		System.out.print(s);
+		System.out.println(s.length());
+		System.out.println(count);
 	}
 
 }
