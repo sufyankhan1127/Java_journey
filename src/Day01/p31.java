@@ -7,7 +7,7 @@ public class p31 {
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		String s=scan.nextLine();
-		romantoint1(s);
+		romantoint2(s);
 		
 	}
 	
@@ -76,6 +76,36 @@ public class p31 {
 			}
 			else {
 				int next=getValue(s.charAt(i+1));
+				if(current<next) {
+					sum=sum-current;
+				}
+				else {
+					sum=sum+current;
+				}
+			}
+		}
+		System.out.println(sum);
+	}
+	
+	public static void romantoint2(String s) {
+		int[] value = new int[26];
+
+		value['I' - 'A'] = 1;
+		value['V' - 'A'] = 5;
+		value['X' - 'A'] = 10;
+		value['L' - 'A'] = 50;
+		value['C' - 'A'] = 100;
+		value['D' - 'A'] = 500;
+		value['M' - 'A'] = 1000;
+		int sum=0;
+		for(int i=0;i<s.length();i++) {
+			int current=value[s.charAt(i)-'A'];
+			
+			if(i==s.length()-1) {
+				sum=sum+current;
+			}
+			else {
+				int next=value[(s.charAt(i+1))-'A'];
 				if(current<next) {
 					sum=sum-current;
 				}
