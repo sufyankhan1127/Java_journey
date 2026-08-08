@@ -14,7 +14,7 @@ public class p34 {
 			ar[i]=scan.nextInt();
 		}
 		
-
+		System.out.println("The minimum pair sum is:");
 		System.out.println(minPairSum(ar));
 		
 	}
@@ -33,8 +33,8 @@ public class p34 {
 				secondsmallest=ar[i];
 			}
 		}
-		
-		return smallest+secondsmallest;
+		int result=smallest+secondsmallest;
+		return result;
 	}
 
 }
