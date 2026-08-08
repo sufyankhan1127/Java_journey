@@ -14,6 +14,7 @@ public class p33 {
 			ar[i]=scan.nextInt();
 		}
 		
+		System.out.println("The maximum pair sum is :");
 		System.out.println(maxPairSum(ar));
 		
 	}
