@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class p35 {
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the string");
 		String s=scan.nextLine();
+		System.out.println("Enter the character");
 		char ch=scan.next().charAt(0);
 		checPresence(s, ch);
 	}
