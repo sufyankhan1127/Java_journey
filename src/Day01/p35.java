@@ -24,6 +24,10 @@ public class p35 {
 		if(a==true) {
 			System.out.println("Found");
 		}
+		
+		else {
+			System.out.println("Not found");
+		}
 	}
 
 }
