@@ -1,3 +1,5 @@
+//sort elements in an array using bubble sort 
+
 package Day02;
 
 import java.util.Scanner;
@@ -5,10 +7,10 @@ import java.util.Scanner;
 public class p1 {
 	public static void main(String[] args) {
 		Scanner scan =new Scanner(System.in);
-		bubblesort(scan);
+		bubblesortAscending(scan);
 	}
 
-	public static void bubblesort(Scanner scan) {
+	public static void bubblesortAscending(Scanner scan) {
 		int n=scan.nextInt();
 		
 		int[] ar=new int[n];
@@ -30,7 +32,7 @@ public class p1 {
 		}
 		
 		for(int i=0;i<ar.length;i++) {
-			System.out.println(ar[i]+" ");
+			System.out.print(ar[i]+" ");
 		}
 	}
 }
