@@ -52,10 +52,7 @@ public class p1 {
 					ar[j]=ar[j+1];
 					ar[j+1]=temp;
 				}
-			}
-			
-			
-			
+			}	
 		}
 		
 		for(int i=0;i<ar.length;i++) {

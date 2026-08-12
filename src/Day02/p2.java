@@ -37,6 +37,10 @@ public class p2 {
 	        // Put current element in its correct position
 	        ar[j + 1] = current;
 	    }
+	    
+	    for(int i=0;i<ar.length;i++) {
+	    	System.out.print(ar[i]);
+	    }
 	
 		
 		
