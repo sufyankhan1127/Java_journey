@@ -15,13 +15,14 @@ public class p2 {
 			ar[i]=scan.nextInt();
 		}
 		System.out.println("Ascending order");
-		InsertionSort(ar);
-//		System.out.println();
-//		System.out.println("Descending order");
-//		bubblesortDescending(ar);
+		InsertionSortAsc(ar);
+		System.out.println();
+		System.out.println("Descending order");
+		InsertionSortDes(ar);
+
 	}
 
-	public static void InsertionSort(int[] ar) {
+	public static void InsertionSortAsc(int[] ar) {
 
 	    for (int i = 1; i < ar.length; i++) {
 
@@ -39,10 +40,31 @@ public class p2 {
 	    }
 	    
 	    for(int i=0;i<ar.length;i++) {
-	    	System.out.print(ar[i]);
+	    	System.out.print(ar[i]+" ");
 	    }
+
+	}
 	
-		
-		
+	public static void InsertionSortDes(int[] ar) {
+
+	    for (int i = 1; i < ar.length; i++) {
+
+	        int current = ar[i];
+	        int j = i - 1;
+
+	        // Shift larger elements to the right
+	        while (j >= 0 && ar[j] < current) {
+	            ar[j + 1] = ar[j];
+	            j--;
+	        }
+
+	        // Put current element in its correct position
+	        ar[j + 1] = current;
+	    }
+	    
+	    for(int i=0;i<ar.length;i++) {
+	    	System.out.print(ar[i]+" ");
+	    }
+
 	}
 }
