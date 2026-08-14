@@ -14,10 +14,10 @@ public class p2 {
 		for(int i=0;i<n;i++) {
 			ar[i]=scan.nextInt();
 		}
-		System.out.println("Ascending order");
+		System.out.println("Ascending order:");
 		InsertionSortAsc(ar);
 		System.out.println();
-		System.out.println("Descending order");
+		System.out.println("Descending order:");
 		InsertionSortDes(ar);
 
 	}
