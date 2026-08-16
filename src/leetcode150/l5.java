@@ -16,6 +16,8 @@ public class l5 {
 		System.out.println(method1(ar));
 		System.out.println("Majority element using method 2:");
 		System.out.println(method2(ar));
+		System.out.println("Majority element using Boyer Moore:");
+		System.out.println(method3(ar));
 		
 	}
 	
@@ -61,5 +63,27 @@ public class l5 {
 		}
 		return -1;
 	}
-
+	
+	
+	//boyer Moore approach best for leetcode
+	
+	public static int method3(int[] ar) {
+		
+		int candidate=0;
+		int count=0;
+		for(int element:ar) {
+			if(count==0) {
+				candidate=element;
+			
+			}
+			
+			if(candidate==element) {
+				count++;
+			}
+			else {
+				count--;
+			}
+		}
+		return candidate;
+	}
 }
