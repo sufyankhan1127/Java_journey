@@ -4,6 +4,7 @@
 
 package leetcode150;
 
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class l5 {
@@ -11,8 +12,10 @@ public class l5 {
 		Scanner scan=new Scanner(System.in);
 		int [] ar=takeinput(scan);
 		
-		System.out.println("Majority element:");
+		System.out.println("Majority element using method 1:");
 		System.out.println(method1(ar));
+		System.out.println("Majority element using method 2:");
+		System.out.println(method2(ar));
 		
 	}
 	
@@ -21,7 +24,7 @@ public class l5 {
 		int n=scan.nextInt();
 		int[] ar=new int[n];
 		for(int i=0;i<n;i++) {
-			System.out.print("Enter the eleemt "+(i+1));
+			System.out.print("Enter the element "+(i+1));
 			ar[i]=scan.nextInt();
 		}
 		
@@ -43,6 +46,19 @@ public class l5 {
 			
 		}
 		
+		return -1;
+	}
+	
+	public static int method2(int [] ar) {
+		HashMap<Integer, Integer> map=new HashMap<>();
+		
+		for(int i=0;i<ar.length;i++) {
+			map.put(ar[i], map.getOrDefault(ar[i], 0)+1);
+			
+			if(map.get(ar[i])>ar.length/2) {
+				return ar[i];
+			}
+		}
 		return -1;
 	}
 
