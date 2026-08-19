@@ -1,5 +1,8 @@
 package leetcode150;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class l6 {
 
 }
@@ -7,7 +10,7 @@ public class l6 {
 class Solution {
     public List<Integer> majorityElement(int[] nums) {
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList();
 
         int candidate1 = 0;
         int candidate2 = 0;
