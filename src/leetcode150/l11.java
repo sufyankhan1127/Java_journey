@@ -1,8 +1,25 @@
 package leetcode150;
 
-public class l11 {
+import java.util.Scanner;
 
-	public int hIndex(int[] citations) {
+public class l11 {
+	
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int [] citations=takeinput(scan);
+	}
+	
+	public static int[] takeinput(Scanner scan) {
+		int n=scan.nextInt();
+		int[] ar=new int[n];
+		for(int i=0;i<n;i++) {
+			ar[i]=scan.nextInt();
+		}
+		
+		return ar;
+	}
+
+	public static int hIndex(int[] citations) {
 
 		for(int i=0;i<citations.length;i++){
 			for(int j=0;j<citations.length-1-i;j++){
