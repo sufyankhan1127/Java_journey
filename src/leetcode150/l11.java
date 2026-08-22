@@ -7,6 +7,8 @@ public class l11 {
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
 		int [] citations=takeinput(scan);
+		
+		System.out.println(hIndex(citations));
 	}
 	
 	public static int[] takeinput(Scanner scan) {
