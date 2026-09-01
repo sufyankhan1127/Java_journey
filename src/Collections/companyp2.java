@@ -1,17 +1,3 @@
-//Student sorting based on marks and subjects
-
-
-
-/*8
-/*101,John,Math,90
-102,Alex,Science,80
-101,John,English,85
-103,Bob,Math,170
-102,Alex,Math,95
-101,John,Science,75
-103,Bob,English,120
-102,Alex,English,90
-*/
 
 package Collections;
 

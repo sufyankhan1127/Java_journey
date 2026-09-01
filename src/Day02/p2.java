@@ -1,4 +1,4 @@
-//sort elements in an array using bubble sort 
+//sort elements in an array using Insertion sort 
 
 package Day02;
 

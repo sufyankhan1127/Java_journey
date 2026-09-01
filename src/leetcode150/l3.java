@@ -1,10 +1,5 @@
 //26. Remove Duplicates from Sorted Array
-//Solved
-//Easy
-//Topics
-//premium lock icon
-//Companies
-//Hint
+
 //Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same.
 //
 //Consider the number of unique elements in nums to be k​​​​​​​​​​​​​​. After removing duplicates, return the number of unique elements k.
