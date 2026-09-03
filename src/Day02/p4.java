@@ -17,6 +17,12 @@ public class p4 {
 		for(int i=0;i<res.length;i++) {
 			System.out.print(res[i]);
 		}
+		System.out.println("Sorting using insertion sort");
+
+		int[] res1=insertionsort(ar);
+		for(int i=0;i<res1.length;i++) {
+			System.out.print(res1[i]);
+		}
 	}
 	
 	public static int[] bubblesort2(int[] ar) {
@@ -28,6 +34,22 @@ public class p4 {
 					ar[j+1]=temp;
 				}
 			}
+		}
+		
+		return ar;
+	}
+	
+	public static int[] insertionsort(int[] ar) {
+		for(int i=1;i<ar.length;i++) {
+			int current =ar[i];
+			int j=i-1;
+			
+			while(j>=0 && ar[j]>current) {
+				ar[j+1]=ar[j];
+				j--;
+			}
+			
+			ar[j+1]=current;
 		}
 		
 		return ar;
