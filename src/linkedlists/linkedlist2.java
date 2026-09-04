@@ -1,5 +1,7 @@
 package linkedlists;
 
+import java.util.Scanner;
+
 public class linkedlist2 {
 	static class Node{
 		int data;
@@ -12,10 +14,33 @@ public class linkedlist2 {
 	}
 	
 	public static void main(String[] args) {
-		Node head=new Node(10);
-		head.next=new Node(20);
-		head.next.next=new Node(30);
-		
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the length of Linked list");
+		int n=scan.nextInt();
+		Node head=null;
+		Node tail=null;
+		for(int i=0;i<n;i++) {
+			
+			System.out.println("Enter the value for Node "+(i+1));
+			int value=scan.nextInt();
+			
+			Node newnode=new Node(value);
+			
+			if(head==null) {
+				head=newnode;
+				tail=newnode;
+			}
+			else {
+				tail.next=newnode;
+				tail=newnode;
+			}
+		}
+		Node temp = head;
+
+	    while (temp != null) {
+	        System.out.print(temp.data + " ");
+	        temp = temp.next;
+	    }
 		Node slow=head;
 		Node fast=head;
 		
@@ -24,7 +49,7 @@ public class linkedlist2 {
 			fast=fast.next.next;
 			
 		}
-		System.out.println("Middle Value"+fast.data);
+		System.out.println("\nMiddle Value "+slow.data);
 	}
 
 }
