@@ -2,7 +2,7 @@ package linkedlists;
 
 import java.util.Scanner;
 
-public class linkedlist2 {
+public class linkedlist3 {
 	static class Node{
 		int data;
 		Node next;
@@ -15,13 +15,13 @@ public class linkedlist2 {
 	
 	public static void main(String[] args) {
 		Scanner scan=new Scanner(System.in);
-		System.out.println("Enter the length of Linked list");
-		int n=scan.nextInt();
+		
+		System.out.println("Enter the length of linked list:");
+		int length=scan.nextInt();
 		Node head=null;
 		Node tail=null;
-		for(int i=0;i<n;i++) {
-			
-			System.out.println("Enter the value for Node "+(i+1));
+		for(int i=0;i<length;i++) {
+			System.out.println("Enter the element on node :"+(i+1));
 			int value=scan.nextInt();
 			
 			Node newnode=new Node(value);
@@ -35,21 +35,20 @@ public class linkedlist2 {
 				tail=newnode;
 			}
 		}
-		Node temp = head;
-
-	    while (temp != null) {
-	        System.out.print(temp.data + " ");
-	        temp = temp.next;
-	    }
-		Node slow=head;
-		Node fast=head;
 		
-		while(fast!=null && fast.next!=null) {
-			slow=slow.next;
-			fast=fast.next.next;
+		System.out.println("Enter the value to find");
+		int findvalue=scan.nextInt();
+		Node temp=head;
+		while(temp!=null) {
+			if(temp.data==findvalue) {
+				System.out.println("Found the value");
+				break;
+			}
 			
+			System.out.println("Value not found");
+			temp=temp.next;
 		}
-		System.out.println("\nMiddle Value: "+slow.data);
+		
 	}
 
 }
