@@ -36,7 +36,7 @@ public class linkedlist3 {
 			}
 		}
 		
-		System.out.println("Enter the value to find");
+		System.out.println("Enter the value to find:");
 		int findvalue=scan.nextInt();
 		boolean found=false;
 		Node temp=head;
