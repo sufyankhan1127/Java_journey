@@ -19,7 +19,10 @@ public class tm3 {
 		}
 		System.out.println("Enter the target value:");
 		int target=scan.nextInt();
+		
+		findNearest(ar, target);
 	}
+	
 	
 	public static void findNearest(int[] ar , int target) {
 		Integer target2=target;
