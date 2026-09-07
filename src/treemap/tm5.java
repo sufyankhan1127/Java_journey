@@ -30,6 +30,7 @@ public class tm5 {
 			map.put(x, true);
 		}
 		
+		System.out.println("Value between "+first +"and" + last+ " are :");
 		System.out.println(map.subMap(first, last));
 		System.out.println(map.subMap(first, true, last, true));
 	}
