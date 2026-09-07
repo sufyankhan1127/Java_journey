@@ -36,18 +36,18 @@ public class tm3 {
 		Integer highest=map.ceilingKey(target);
 		
 		if(highest==null) {
-			System.out.println("Nearest value"+lowest);
+			System.out.println("Nearest value: "+lowest);
 		}
 		else if(lowest==null) {
-			System.out.println("Nearest value"+highest);
+			System.out.println("Nearest value: "+highest);
 		}
 		
 		else {
 			if(target-lowest<=target-highest){
-				System.out.println("Nearest value"+lowest);
+				System.out.println("Nearest value: "+lowest);
 			}
 			else {
-				System.out.println("Nearest value"+highest);
+				System.out.println("Nearest value: "+highest);
 			}
 		}
 	}
