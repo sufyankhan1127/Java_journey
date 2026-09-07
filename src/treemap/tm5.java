@@ -15,6 +15,8 @@ public class tm5 {
 			System.out.println("Enter the value of "+(i+1));
 			ar[i]=scan.nextInt();
 		}
+		
+		printSubMap(ar, scan);
 	}
 	
 	public static void printSubMap(int [] ar,Scanner scan) {
@@ -29,5 +31,6 @@ public class tm5 {
 		}
 		
 		System.out.println(map.subMap(first, last));
+		System.out.println(map.subMap(first, true, last, true));
 	}
 }
