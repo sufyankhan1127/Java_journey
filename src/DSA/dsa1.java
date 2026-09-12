@@ -22,9 +22,9 @@ public class dsa1 {
 	}
 	
 	public static int [] reversearray(int[] ar) {
-//		if(ar==null) {
-//			return null;
-//		}
+		if(ar==null) {
+			return null;
+		}
 		int st=0;
 		int end=ar.length-1;
 		while(st<end) {
