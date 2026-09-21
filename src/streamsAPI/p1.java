@@ -16,8 +16,14 @@ public class p1 {
 		System.out.println("Enter the value to filter less than elements");
 		int input=scan.nextInt();
 		list.stream()
-		.filter(n->n>input)
-		.forEach(System.out::println);//why ::println but not .println what is the difference between both
+		.filter(n->n>input)  
+//		.forEach(System.out::println);
+		.forEach(n->System.out.println(n));
+		
+		
+		
+		
+		//why ::println but not .println what is the difference between both
 		/*This is Java 8 method references meaning use println() method call whenever needed*/
 		
 //		. means:
