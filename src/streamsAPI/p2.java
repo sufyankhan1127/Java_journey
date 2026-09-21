@@ -13,7 +13,9 @@ public class p2 {
 			System.out.println("Enter the element "+(i+1));
 			list.add(scan.nextInt());
 		}
-		filterstream(list, scan);
+//		filterstream(list, scan);
+		
+		mapstream(list);
 		
 	}
 	
@@ -41,5 +43,10 @@ public class p2 {
 		}
 
 	}
+	
+	public static void mapstream(ArrayList<Integer> list) {
+		list.stream().map(n->n*2).forEach(System.out::println);
+	}
+
 
 }
