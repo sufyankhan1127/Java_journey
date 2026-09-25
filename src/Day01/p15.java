@@ -10,6 +10,15 @@ public class p15 {
 		countLength(n);
 		
 	}
+//	int count=0;
+//	int n;
+//	String s="";
+//	while(n>0) {
+//	count++;
+//	int digit=(int)(n%10);
+//	s=digit+s;
+//	n=n/10;
+//	}
 	
 	public static void countLength(int n) {
 		String s="";
@@ -25,3 +34,45 @@ public class p15 {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -15,8 +15,8 @@ public class p20 {
 		
 		for(int i=x+1;i<=y;i++) {
 			int original=i;
-			int count=0;
 			int temp=i;
+			int count=0;
 			
 			while(temp>0) {
 				count++;

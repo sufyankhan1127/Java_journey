@@ -16,7 +16,6 @@ public class p16 {
 		printDesOut(factorial);
 		
 	}
-	
 	public static long printfact(int n) {
 		
 		while(n==0 || n==1) {
@@ -25,7 +24,6 @@ public class p16 {
 		return n*printfact(n-1);
 		
 	}
-	
 	
 	public static void printDesOut(long factorial) {
 		String s="";
