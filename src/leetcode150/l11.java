@@ -20,7 +20,7 @@ public class l11 {
 			System.out.println("Enter the element"+(i+1));
 			ar[i]=scan.nextInt();
 		}
-		
+//		weiufvwy
 		return ar;
 	}
 
